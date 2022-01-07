@@ -1,0 +1,27 @@
+films = {
+    "Spiderman: No Way Home":[12,5],
+    "The Matrix Resurrections" :[15,5],
+    "Clifford The Big Red Dog":[8,5],
+    "Licorice Pizza":[15,5],
+    "The Addams Family 2" : [5,5]
+         }
+while True:
+    choice = input("What film would you like to watch?: ").strip().title()
+    
+    if choice in films:
+        age = int(input("how old are you?: ").strip())
+        # check user age
+        if age >= films[choice][0]:
+            #check enough seats
+            tickets = int(input(" how many tickets do you want?: ").strip())
+            if tickets <= films[choice][1]:
+             films[choice][1] =(films[choice][1] - tickets)
+             print("enjoy the film")
+             print(films[choice][1])
+            else:
+                  print("sorry we dont have that many seats for that film")
+            
+        else:
+             print("you are too young to watch that film")
+    else:
+        print("we dont have that film....scrub")
